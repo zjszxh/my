@@ -11,3 +11,4 @@ func _on_body_exited(body):
 	# 检查离开的物体是否是卡片
 	if body.is_in_group("cards"):
 		print("卡片离开卡槽了。")
+		#奋斗奋斗
