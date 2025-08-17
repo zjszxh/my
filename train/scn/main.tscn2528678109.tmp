@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmevvelraei8e"]
+
+[ext_resource type="PackedScene" uid="uid://d14x6in80tgl3" path="res://scn/card.tscn" id="1_7rek1"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="control" type="Node2D" parent="."]
+
+[node name="Card" parent="control" instance=ExtResource("1_7rek1")]
+position = Vector2(-240, 0)
+
+[node name="Card2" parent="control" instance=ExtResource("1_7rek1")]
+position = Vector2(-23, -1)
+
+[node name="Card3" parent="control" instance=ExtResource("1_7rek1")]
+position = Vector2(187, -2)

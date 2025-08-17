@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5o71l7y08sfc"]
+
+[ext_resource type="Texture2D" uid="uid://bhtq82yv1iaya" path="res://assets/2402214F9219482C2D49C4ACC2FDF8FBDBFA32.png" id="1_tcgym"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tcgym"]
+size = Vector2(563.035, 751.163)
+
+[node name="Card" type="Area2D"]
+
+[node name="CardSprite" type="Sprite2D" parent="."]
+position = Vector2(-1, -1.33804)
+scale = Vector2(1.74648, 1.74648)
+texture = ExtResource("1_tcgym")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3.63798e-12, -1.5)
+scale = Vector2(0.43, 0.43)
+shape = SubResource("RectangleShape2D_tcgym")

@@ -1,0 +1,102 @@
+[gd_scene load_steps=7 format=3 uid="uid://drhdani75b35b"]
+
+[ext_resource type="PackedScene" uid="uid://c5o71l7y08sfc" path="res://scn/card.tscn" id="1_7rek1"]
+[ext_resource type="Script" uid="uid://bocpgqb8y6no" path="res://script/control.gd" id="1_a14j1"]
+[ext_resource type="PackedScene" uid="uid://8adswwxhqguq" path="res://scn/card slot.tscn" id="3_4hsr3"]
+[ext_resource type="PackedScene" uid="uid://dhw3085au22vo" path="res://scn/giveup.tscn" id="4_gyckk"]
+[ext_resource type="Texture2D" uid="uid://8vdl3t3a34xc" path="res://assets/unnamed.png" id="5_b6phj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4hsr3"]
+font_size = 40
+
+[node name="main" type="Node2D"]
+scale = Vector2(0.57, 0.57)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.535, 0.535)
+
+[node name="giveup" parent="." groups=["giveup"] instance=ExtResource("4_gyckk")]
+position = Vector2(-1435.09, -533.333)
+scale = Vector2(2.56, 2.56)
+
+[node name="slots" type="Node2D" parent="."]
+position = Vector2(1571.93, -84.2105)
+
+[node name="Card Slot" parent="slots" groups=["card_slots"] instance=ExtResource("3_4hsr3")]
+position = Vector2(-1354.39, -419.298)
+scale = Vector2(0.43, 0.43)
+
+[node name="Card Slot3" parent="slots" groups=["card_slots"] instance=ExtResource("3_4hsr3")]
+position = Vector2(-657.895, 154.386)
+scale = Vector2(0.43, 0.43)
+
+[node name="Card Slot4" parent="slots" groups=["card_slots"] instance=ExtResource("3_4hsr3")]
+position = Vector2(-1010.53, 154.386)
+scale = Vector2(0.43, 0.43)
+
+[node name="Card Slot5" parent="slots" groups=["card_slots"] instance=ExtResource("3_4hsr3")]
+position = Vector2(-1354.39, 154.386)
+scale = Vector2(0.43, 0.43)
+
+[node name="Card Slot6" parent="slots" groups=["card_slots"] instance=ExtResource("3_4hsr3")]
+position = Vector2(-294.737, 154.386)
+scale = Vector2(0.43, 0.43)
+
+[node name="Card Slot7" parent="slots" groups=["card_slots"] instance=ExtResource("3_4hsr3")]
+position = Vector2(56.1404, 154.386)
+scale = Vector2(0.43, 0.43)
+
+[node name="Card Slot8" parent="slots" groups=["card_slots"] instance=ExtResource("3_4hsr3")]
+position = Vector2(56.1404, -421.053)
+scale = Vector2(0.43, 0.43)
+
+[node name="Card Slot9" parent="slots" groups=["card_slots"] instance=ExtResource("3_4hsr3")]
+position = Vector2(-294.737, -421.053)
+scale = Vector2(0.43, 0.43)
+
+[node name="Card Slot10" parent="slots" groups=["card_slots"] instance=ExtResource("3_4hsr3")]
+position = Vector2(-657.895, -419.298)
+scale = Vector2(0.43, 0.43)
+
+[node name="Card Slot2" parent="slots" groups=["card_slots"] instance=ExtResource("3_4hsr3")]
+position = Vector2(-1010.53, -419.298)
+scale = Vector2(0.43, 0.43)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 740.351
+offset_top = -970.175
+offset_right = 1103.35
+offset_bottom = -893.175
+label_settings = SubResource("LabelSettings_4hsr3")
+
+[node name="CardContainer" type="Node2D" parent="."]
+script = ExtResource("1_a14j1")
+
+[node name="Card" parent="CardContainer" groups=["cards"] instance=ExtResource("1_7rek1")]
+position = Vector2(-675.439, 645.614)
+
+[node name="Card2" parent="CardContainer" groups=["cards"] instance=ExtResource("1_7rek1")]
+position = Vector2(-387.719, 645.614)
+
+[node name="Card3" parent="CardContainer" groups=["cards"] instance=ExtResource("1_7rek1")]
+position = Vector2(196.491, 645.614)
+
+[node name="Card4" parent="CardContainer" groups=["cards"] instance=ExtResource("1_7rek1")]
+position = Vector2(-94.7368, 645.614)
+
+[node name="Card5" parent="CardContainer" groups=["cards"] instance=ExtResource("1_7rek1")]
+position = Vector2(480.702, 645.614)
+
+[node name="CardDeck" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CardDeck"]
+position = Vector2(-1740.35, -856.14)
+scale = Vector2(0.352876, 0.352876)
+texture = ExtResource("5_b6phj")
+
+[node name="DrawButton" type="Button" parent="."]
+offset_left = -1842.0
+offset_top = -1037.0
+offset_right = -1638.0
+offset_bottom = -675.0
+text = "抽牌"

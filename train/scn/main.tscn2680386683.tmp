@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://drhdani75b35b"]
+
+[ext_resource type="PackedScene" uid="uid://c5o71l7y08sfc" path="res://scn/card.tscn" id="1_7rek1"]
+[ext_resource type="Script" uid="uid://bocpgqb8y6no" path="res://script/control.gd" id="1_a14j1"]
+[ext_resource type="PackedScene" uid="uid://8adswwxhqguq" path="res://scn/card slot.tscn" id="3_4hsr3"]
+
+[node name="main" type="Node2D"]
+scale = Vector2(0.57, 0.57)
+
+[node name="Card Slot" parent="." groups=["card_slots"] instance=ExtResource("3_4hsr3")]
+position = Vector2(714.035, 45.614)
+scale = Vector2(0.43, 0.43)
+
+[node name="control" type="Node2D" parent="."]
+script = ExtResource("1_a14j1")
+
+[node name="Card" parent="control" groups=["cards"] instance=ExtResource("1_7rek1")]
+position = Vector2(-663.158, -22.807)
+
+[node name="Card2" parent="control" groups=["cards"] instance=ExtResource("1_7rek1")]
+position = Vector2(-198.246, -26.3158)
+
+[node name="Card3" parent="control" groups=["cards"] instance=ExtResource("1_7rek1")]
+position = Vector2(242.105, -31.5789)
+
+[node name="Card4" parent="control" instance=ExtResource("1_7rek1")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
