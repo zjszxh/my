@@ -1,62 +1,4 @@
-#extends Node2D
-#
-#var card_being_dragged
-#var drag_offset = Vector2.ZERO
-#
-## Called every frame. 'delta' is the elapsed time since the previous frame.
-##func _process(delta: float) -> void:
-	##if card_being_dragged:
-		##var mouse_pos = get_global_mouse_position()
-		##card_being_dragged.position = mouse_pos
-#
-##检测鼠标左键点击的事件
-#func _input(event: InputEvent) -> void:
-	#if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
-		#if event.pressed:
-			#var card = raycast_check_card()
-			#if card:
-				#card_being_dragged = card
-				## 记录鼠标在卡牌上的初始偏移量
-				#drag_offset = card.get_global_mouse_position() - card.global_position
-		#else:
-		  ## 鼠标左键释放时，检查卡牌是否在卡槽内
-			#if card_being_dragged:
-				#var overlapping_areas = card_being_dragged.get_overlapping_areas()
-				#var dropped_in_slot = false
-				#
-				## 遍历所有重叠区域，找到第一个卡槽
-				#for area in overlapping_areas:
-					#if area.is_in_group("card_slots"):
-						#print("卡片被吸附到卡槽！")
-						## 核心吸附逻辑：将卡牌位置设置为卡槽的位置
-						#card_being_dragged.global_position = area.global_position
-						## 还可以将卡牌的z_index提高，使其在卡槽之上
-						#card_being_dragged.z_index = area.z_index + 1
-						#
-						#dropped_in_slot = true
-						#break # 找到卡槽后立即停止循环
-				#
-				#if not dropped_in_slot:
-					#print("卡片没有放进卡槽。")
-					## 在这里添加卡牌返回手牌区域的逻辑
-				#
-			#card_being_dragged = null
-			#
-	#if event is InputEventMouseMotion and card_being_dragged:
-		## 使用全局坐标来更新卡牌位置
-		#card_being_dragged.global_position = get_global_mouse_position() - drag_offset
-		
-#创建一个射线检测方法，检测鼠标位置是否有卡牌
-#func raycast_check_card():
-	#var space_state = get_world_2d().direct_space_state
-	#var parameters = PhysicsPointQueryParameters2D.new()
-	#parameters.position = get_global_mouse_position()
-	#parameters.collide_with_areas = true
-	#parameters.collision_mask = 1
-	#var result = space_state.intersect_point(parameters)
-	#if result.size() > 0:
-		#return result[0].collider.get_parent()
-	#return null
+
 extends Node2D
 @onready var label: Label = $"../Label"
 @onready var card_deck: Node2D = $"../CardDeck"
@@ -210,4 +152,4 @@ func raycast_check_card():
 					top_card = current_card
 					
 	return top_card
-	
+	#提交github
