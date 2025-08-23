@@ -1,0 +1,230 @@
+[gd_scene load_steps=30 format=3 uid="uid://bqsfghyx2av0l"]
+
+[ext_resource type="Texture2D" uid="uid://b2n1axej4vdpe" path="res://assets/idle Noredin.png" id="1_44jbc"]
+[ext_resource type="Script" uid="uid://drcw54pb071ef" path="res://scripts/pet.gd" id="1_81sy5"]
+[ext_resource type="Texture2D" uid="uid://cw65n5gljfbbc" path="res://assets/run Noredin.png" id="2_0k1wq"]
+[ext_resource type="Texture2D" uid="uid://dcv8naek2hhgq" path="res://assets/death Noredin.png" id="2_1qbb5"]
+[ext_resource type="FontFile" uid="uid://chhwhx1784xlv" path="res://assets/VonwaonBitmap-12px.ttf" id="4_k1p71"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0aww"]
+atlas = ExtResource("2_1qbb5")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ethf"]
+atlas = ExtResource("2_1qbb5")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cavgh"]
+atlas = ExtResource("2_1qbb5")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jha2k"]
+atlas = ExtResource("2_1qbb5")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rccfn"]
+atlas = ExtResource("2_1qbb5")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hdqlq"]
+atlas = ExtResource("2_1qbb5")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0k1wq"]
+atlas = ExtResource("1_44jbc")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81sy5"]
+atlas = ExtResource("1_44jbc")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k1p71"]
+atlas = ExtResource("1_44jbc")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1qbb5"]
+atlas = ExtResource("1_44jbc")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75o0j"]
+atlas = ExtResource("1_44jbc")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_soa42"]
+atlas = ExtResource("1_44jbc")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ssty4"]
+atlas = ExtResource("2_0k1wq")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_682rs"]
+atlas = ExtResource("2_0k1wq")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4parw"]
+atlas = ExtResource("2_0k1wq")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fnrgr"]
+atlas = ExtResource("2_0k1wq")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i2htb"]
+atlas = ExtResource("2_0k1wq")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_63txi"]
+atlas = ExtResource("2_0k1wq")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sdq4e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0aww")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ethf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cavgh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jha2k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rccfn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hdqlq")
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hdqlq")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0k1wq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_81sy5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k1p71")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1qbb5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_75o0j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_soa42")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ssty4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_682rs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4parw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fnrgr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i2htb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_63txi")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_44jbc"]
+size = Vector2(225, 171)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1qbb5"]
+font = ExtResource("4_k1p71")
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_75o0j"]
+font = ExtResource("4_k1p71")
+
+[sub_resource type="LabelSettings" id="LabelSettings_soa42"]
+font = ExtResource("4_k1p71")
+font_size = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1qbb5"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Pet" type="Node2D"]
+position = Vector2(132, 117)
+script = ExtResource("1_81sy5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(4.14583, 4.14583)
+sprite_frames = SubResource("SpriteFrames_sdq4e")
+animation = &"idle"
+autoplay = "walk"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-59.5, -31.5)
+shape = SubResource("RectangleShape2D_44jbc")
+
+[node name="DialogueLabel" type="Label" parent="."]
+offset_left = -21.0
+offset_top = -83.0
+offset_right = 19.0
+offset_bottom = -60.0
+label_settings = SubResource("LabelSettings_1qbb5")
+
+[node name="DistanceLabel" type="Label" parent="."]
+modulate = Color(1, 0.530931, 0.416286, 1)
+offset_left = -98.0
+offset_top = -82.0
+offset_right = -58.0
+offset_bottom = -59.0
+label_settings = SubResource("LabelSettings_1qbb5")
+
+[node name="FatigueLabel" type="Label" parent="."]
+offset_left = -99.0
+offset_top = -43.0
+offset_right = -59.0
+offset_bottom = -20.0
+label_settings = SubResource("LabelSettings_75o0j")
+
+[node name="GameOverLabel" type="Label" parent="."]
+offset_left = -92.0
+offset_top = -59.0
+offset_right = 11.0
+offset_bottom = -23.0
+label_settings = SubResource("LabelSettings_soa42")
+horizontal_alignment = 1
+
+[node name="RestartButton" type="Button" parent="."]
+offset_left = -46.0
+offset_top = -7.0
+offset_right = 26.0
+offset_bottom = 24.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_1qbb5")
+text = "再跑一次"
