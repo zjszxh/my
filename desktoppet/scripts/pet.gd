@@ -43,6 +43,9 @@ const FATIGUE_PER_METER_MIN = 0.2
 const FATIGUE_PER_METER_MAX = 0.4
 # 达到最大增长率的疲劳值
 const FATIGUE_RATE_MAX_START = 70.0
+# 疲劳恢复量 - 调整以确保疲劳值能够有效累积
+const FATIGUE_RECOVERY_IDLE_PER_SECOND = 0.5
+const FATIGUE_RECOVERY_DOWN = 8.0 # 从 10.0 降至 5.0
 
 # 累积距离变量
 var total_walk_distance = 0.0 # 累积行走距离 (像素)
@@ -220,8 +223,8 @@ func _process(delta):
 			States.IDLE:
 				if animated_sprite.animation != "idle":
 					animated_sprite.play("idle")
-				# 空闲时每秒减少0.5点疲劳值
-				fatigue_value -= 0.5*delta
+				# 空闲时每秒减少疲劳值
+				fatigue_value -= FATIGUE_RECOVERY_IDLE_PER_SECOND * delta
 			States.WALK:
 				if animated_sprite.animation != "walk":
 					animated_sprite.play("walk")
@@ -235,7 +238,7 @@ func _process(delta):
 				show_persistent_dialogue("别点我...")
 				
 				# 倒地状态下减少疲劳值
-				fatigue_value -= 10.0 / DOWN_DURATION_MAX * delta
+				fatigue_value -= FATIGUE_RECOVERY_DOWN / DOWN_DURATION_MAX * delta
 				
 				# 减少倒地计时器
 				down_timer -= delta
